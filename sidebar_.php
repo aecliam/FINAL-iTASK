@@ -117,13 +117,10 @@
                     </li>
 
                     <li>
-                        <a href="./index.php?page=archive">
+                        <a href="./index.php?page=project_archive">
                             <i class='bx bx-archive'></i>
-                                <span class="link_name">Archives</span>
+                            <span class="link_name" href="./index.php?page=project_archive">Archives</span>
                         </a>
-                        <ul class="sub-menu blank">
-                            <li><a class="link_name" href="./index.php?page=archive">Archives</a></li>
-                        </ul>
                     </li>
 
                     <!--div class="profile-details">

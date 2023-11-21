@@ -287,7 +287,7 @@ Class Action {
 	}
 	function delete_project(){
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM project_list where id = $id");
+		$delete = $this->db->query("DELETE FROM project_archive where id = $id");
 		if($delete){
 			return 1;
 		}
