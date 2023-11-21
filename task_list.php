@@ -102,6 +102,19 @@
                         	}
                         	?>
                         </td>
+						<div class="form-group">
+              <label for="" class="control-label">Project Manager</label>
+              <select class="form-control form-control-sm select2" name="manager_id">
+              	<option></option>
+              	<?php 
+              	$managers = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 2 order by concat(firstname,' ',lastname) asc ");
+              	while($row= $managers->fetch_assoc()):
+              	?>
+              	<option value="<?php echo $row['id'] ?>" <?php echo isset($manager_id) && $manager_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
+              	<?php endwhile; ?>
+              </select>
+            </div>
+			
 						<td class="text-center">
 							<button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 		                      Action

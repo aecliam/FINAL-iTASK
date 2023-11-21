@@ -19,6 +19,11 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+      <li>
+        <a class="nav-link" href="notif_view.php">
+          <i class='bx bxs-bell'></i>
+        </a>
+      </li>
      <li class="nav-item dropdown">
             <a class="nav-link"  data-toggle="dropdown" aria-expanded="true" href="javascript:void(0)">
               <span>

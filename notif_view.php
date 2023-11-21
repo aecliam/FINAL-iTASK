@@ -68,12 +68,3 @@ foreach($qry as $k => $v){
 		display: flex
 	}
 </style>
-<script>
-document.getElementById("uploadFile").addEventListener("change", function(e) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        document.getElementById("customFile").src = e.target.result;
-    }
-    reader.readAsDataURL(e.target.files[0]);
-});
-</script>
