@@ -34,11 +34,11 @@
 		                      Action
 		                    </button>
 		                    <div class="dropdown-menu" style="">
-		                      <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">View</a>
-		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item" href="./index.php?page=edit_scholar_(JHS)&id=<?php echo $row['id'] ?>">Edit</a>
-		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+		                    	<a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">View</a>
+		                    	<div class="dropdown-divider"></div>
+		                    	<a class="dropdown-item" href="./index.php?page=edit_scholar_(JHS)&id=<?php echo $row['id'] ?>">Edit</a>
+		                      	<div class="dropdown-divider"></div>
+		                      	<a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
 		                    </div>
 						</td>
 					</tr>	
@@ -55,7 +55,7 @@
 		uni_modal("<i class='fa fa-id-card'></i> User Details","scholar_jhs_view.php?id="+$(this).attr('data-id'))
 	})
 	$('.delete_user').click(function(){
-	_conf("Are you sure to delete this user?","delete_user",[$(this).attr('data-id')])
+	_conf("Are you sure to delete this scholar?","delete_user",[$(this).attr('data-id')])
 	})
 	})
 	function delete_user($id){
