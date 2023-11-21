@@ -50,6 +50,7 @@
       })
   
 	    $('#notif_view').click(function(){
-        uni_modal('Notifications','notif_view.php?id='+$(this).attr('data-id'))
+		  uni_modal("<i class='fa fa-bell'></i> Notifications","notif_view.php?id="+$(this).attr('data-id'))
 	    })
   </script>
+
