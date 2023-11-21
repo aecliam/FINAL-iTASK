@@ -38,7 +38,7 @@
 					}elseif($_SESSION['login_type'] == 3){
 						$where = " where concat('[',REPLACE(user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
 					}
-					$qry = $conn->query("SELECT * FROM project_list $where order by name asc");
+					$qry = $conn->query("SELECT * FROM project_archive $where order by name asc");
 					while($row= $qry->fetch_assoc()):
 						$trans = get_html_translation_table(HTML_ENTITIES,ENT_QUOTES);
 						unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);
@@ -89,12 +89,10 @@
 		                      Action
 		                    </button>
 		                    <div class="dropdown-menu" style="">
-		                      <a class="dropdown-item view_project" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>" data-id="<?php echo $row['id'] ?>">View</a>
-		                      <div class="dropdown-divider"></div>
 		                      <?php if($_SESSION['login_type'] != 3): ?>
-		                      <a class="dropdown-item" href="./index.php?page=edit_project&id=<?php echo $row['id'] ?>">Edit</a>
+		                      <a class="dropdown-item" href="./index.php?page=retrieve_query&id=<?php echo $row['id'] ?>">Retrieve</a>
 		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item delete_project" href="./index.php?page=archive_query&id=<?php echo $row['id'] ?>">Archive</a>
+		                      <a class="dropdown-item delete_project" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete Permanently</a>
 		                  <?php endif; ?>
 		                    </div>
 						</td>
