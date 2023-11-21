@@ -14,6 +14,7 @@
 					<col width="20%">
 					<col width="15%">
 					<col width="15%">
+					<col width="15%">
 					<col width="10%">
 					<col width="10%">
 					<col width="10%">
@@ -23,6 +24,7 @@
 						<th class="text-center">#</th>
 						<th>Project</th>
 						<th>Task</th>
+						<th>Assigned To</th>
 						<th>Project Started</th>
 						<th>Project Due Date</th>
 						<th>Project Status</th>
@@ -72,6 +74,10 @@
 							<p><b><?php echo ucwords($row['task']) ?></b></p>
 							<p class="truncate"><?php echo strip_tags($desc) ?></p>
 						</td>
+						<td>
+							<p><b><?php echo ucwords($row['assignedto']) ?></b></p>
+						</td>
+
 						<td><b><?php echo date("M d, Y",strtotime($row['start_date'])) ?></b></td>
 						<td><b><?php echo date("M d, Y",strtotime($row['end_date'])) ?></b></td>
 						<td class="text-center">

@@ -16,6 +16,18 @@ if(isset($_GET['id'])){
 			<input type="text" class="form-control form-control-sm" name="task" value="<?php echo isset($task) ? $task : '' ?>" required>
 		</div>
 		<div class="form-group">
+			<label>Assigned To</label>
+              <select class="form-control form-control-sm select2" multiple="multiple" name="user_ids[]">
+              		<?php 
+              			$employees = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 3 order by concat(firstname,' ',lastname) asc ");
+              			while($row= $employees->fetch_assoc()):
+              		?>
+              		<option value="<?php echo $row['id'] ?>" <?php echo isset($user_ids) && in_array($row['id'],explode(',',$user_ids)) ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
+              		<?php endwhile; ?>
+              </select>
+
+		</div>
+		<div class="form-group">
 			<label for="">Description</label>
 			<textarea name="description" id="" cols="30" rows="10" class="summernote form-control">
 				<?php echo isset($description) ? $description : '' ?>

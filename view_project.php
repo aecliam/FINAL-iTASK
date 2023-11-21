@@ -129,12 +129,14 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 							<col width="5%">
 							<col width="25%">
 							<col width="30%">
+							<col width="30%">
 							<col width="15%">
 							<col width="15%">
 						</colgroup>
 						<thead>
 							<th>#</th>
 							<th>Task</th>
+							<th>Assigned To</th>
 							<th>Description</th>
 							<th>Status</th>
 							<th>Action</th>
@@ -152,6 +154,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								<tr>
 			                        <td class="text-center"><?php echo $i++ ?></td>
 			                        <td class=""><b><?php echo ucwords($row['task']) ?></b></td>
+									<td class=""><b><?php echo ucwords($row['assignedto']) ?></b></td>
 			                        <td class=""><p class="truncate"><?php echo strip_tags($desc) ?></p></td>
 			                        <td>
 			                        	<?php 
