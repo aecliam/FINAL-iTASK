@@ -2,7 +2,7 @@
 <?php
 if(isset($_GET['id'])){
 	$type_arr = array('',"Admin","Project Manager","Employee");
-	$qry = $conn->query("SELECT *,concat(firstname,' ',middlename,' ',lastname,' ',suffix) as name FROM scholars_shs where id = ".$_GET['id'])->fetch_array();
+	$qry = $conn->query("SELECT *,concat(p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id) as name FROM task_list where id = ".$_GET['id'])->fetch_array();
 	
 foreach($qry as $k => $v){
 	$$k = $v;
@@ -26,32 +26,7 @@ foreach($qry as $k => $v){
         <div class="container-fluid">
         	<dl>
         		<dt>Birth Date</dt>
-        		<dd><?php echo $bdate ?></dd>
-				<dt>Gender</dt>
-        		<dd><?php echo $gender ?></dd>
-				<dt>Contact Number</dt>
-        		<dd><?php echo $contact ?></dd>
-				<dt>Home Address</dt>
-        		<dd><?php echo $address ?></dd>
-				<dt>School</dt>
-        		<dd><?php echo $school ?></dd>
-				<dt>Grade Level</dt>
-        		<dd><?php echo $gradelvl ?></dd>
-				<dt>Parent/Guardian Name</dt>
-        		<dd><?php echo $pgname ?></dd>
-				<dt>Parent/Guardian Contact Number</dt>
-        		<dd><?php echo $pgcontact ?></dd>
-				<dt>Certificate of Registration</dt>
-        		<dd><?php echo $registration ?></dd>
-				<dt>Report Card or Grades Slip</dt>
-        		<dd><?php echo $report_card ?></dd>
-				<dt>Valid ID or School ID</dt>
-        		<dd><?php echo $valid_id ?></dd>
-				<dt>Barangay Certificate</dt>
-        		<dd><?php echo $bgy_cert ?></dd>
-				<dt>Parent's Pay Slip or Social Case Study or Certificate of Eligibility(Issued by the MSWDO)</dt>
-        		<dd><?php echo $payslip ?></dd>
-
+        		
         	</dl>
         </div>
     </div>

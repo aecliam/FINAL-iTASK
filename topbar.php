@@ -19,13 +19,15 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+
       <li>
-        <a class="nav-link" href="notif_view.php">
-          <i class='bx bxs-bell'></i>
+        <a class="nav-link" href="javascript:void(0)" id="notif_view" role="button">
+          <i class="fa fa-solid fa-bell ml-2"></i>
         </a>
       </li>
+
      <li class="nav-item dropdown">
-            <a class="nav-link"  data-toggle="dropdown" aria-expanded="true" href="javascript:void(0)">
+            <a class="nav-link" data-toggle="dropdown" aria-expanded="true" href="javascript:void(0)">
               <span>
                 <div class="d-felx badge-pill">
                   <span class="fa fa-user mr-2"></span>
@@ -46,4 +48,8 @@
      $('#manage_account').click(function(){
         uni_modal('Manage Account','manage_user.php?id=<?php echo $_SESSION['login_id'] ?>')
       })
+  
+	    $('#notif_view').click(function(){
+        uni_modal('Notifications','notif_view.php?id='+$(this).attr('data-id'))
+	    })
   </script>

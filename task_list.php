@@ -41,7 +41,7 @@
 					}
 					
 					$stat = array("Pending","Started","On-Progress","On-Hold","Over Due","Done");
-					$qry = $conn->query("SELECT t.*,p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM task_list t inner join project_list p on p.id = t.project_id $where order by p.name asc");
+					$qry = $conn->query("SELECT t.*, p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM task_list t inner join project_list p on p.id = t.project_id $where order by p.name asc");
 					while($row= $qry->fetch_assoc()):
 						$trans = get_html_translation_table(HTML_ENTITIES,ENT_QUOTES);
 						unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);
@@ -102,19 +102,7 @@
                         	}
                         	?>
                         </td>
-						<div class="form-group">
-              <label for="" class="control-label">Project Manager</label>
-              <select class="form-control form-control-sm select2" name="manager_id">
-              	<option></option>
-              	<?php 
-              	$managers = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 2 order by concat(firstname,' ',lastname) asc ");
-              	while($row= $managers->fetch_assoc()):
-              	?>
-              	<option value="<?php echo $row['id'] ?>" <?php echo isset($manager_id) && $manager_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
-              	<?php endwhile; ?>
-              </select>
-            </div>
-			
+						
 						<td class="text-center">
 							<button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 		                      Action
